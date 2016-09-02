@@ -1,0 +1,42 @@
+//
+//  YTDataManger.h
+//  DataManger
+//
+//  Created by uustock1 on 14-7-24.
+//  Copyright (c) 2014年 uustock1. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "YTUrlHeader.h"
+//#define tocken @"3071|S-pfksy9do|ToTu2wg9ja4OXcn/w3E/YaBw8sFDgBLQtEXRgTvLHK4FMKWUDJT61UjXVwIpRBfO2D4awtu9AKTLEfSTnHWpTvv0iEsvTx8lD72V/Q+C4ehM5J2AqjGvI1EcbL6BqZDtKkhfNbBypxEDoieox+4UlkWLv5bY+tc8Jgld8DU/peo=|1|iphone5s|640|1136"
+
+
+@interface YTDataManger : NSObject
+@property(nonatomic,strong) NSString * tockenByLocalConfig;
++(YTDataManger *)shareDataManger;
+
+-(void)getCongifAndTocken:(NSString *)tocken1 idcode:(NSString *)idcode aver:(NSString *)aver cver:(NSString *)cver destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+//获取父目录 id传0
+-(void)getcategoryAndTocken:(NSString *)tocken1 idcode:(NSString *)idcode parent_id:(NSString *)parent_id page:(NSString *)page size:(NSString *)size status:(NSString *)status destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+-(void)getItemByCategoryAndTocken:(NSString *)tocken1 categoryid:(NSString *)categoryid page:(NSInteger)page size:(NSInteger)size  status:(NSString *)status destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+-(void)getDetailItemAndTocken:(NSString *)tocken1 idcode:(NSString *)idcode itemid:(NSString *)itemid destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+-(void)getDetailInformationUrlAndTocken:(NSString *)tocken1 idcode:(NSString *)idcode itemid:(NSString *)itemid destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+//获取宣传组信息
+-(void)getPromotionByGroupidAndTocken:(NSString *)tocken1 groupid:(NSInteger)groupid destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+//获取资讯类单元详细信息
+-(void)getdetailinformationAndTocken:(NSString *)tocken1 itemid:(NSString *)itemid destView:(UIView *) destView Block:(void (^)(id posts,NSError *error))block;
+
+//获取评论
+-(void)getDiscussByItemidAndTocken:(NSString *)tocken1 itemid:(NSString *)itemid page:(NSInteger)page size:(NSInteger)size  destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+//添加评论
+-(void)addItemDiscussAndTocken:(NSString *)tocken1 idcode:(NSString *)idcode itemid:(NSString *)itemid loginname:(NSString *)loginname content:(NSString *)content  destView:(UIView *)destView Block:(void (^)(id posts,NSError *error))block;
+
+//检查新版本
+
+- (void)checkVesionTocken:(NSString *)tocken1 versionnum:(NSString *)versionnum block:(void (^)(id posts,NSError *error))block;
+@end

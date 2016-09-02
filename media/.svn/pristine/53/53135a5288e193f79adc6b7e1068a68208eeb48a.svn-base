@@ -1,0 +1,26 @@
+//
+//  YTListObj.h
+//  ShowMi
+//
+//  Created by uustock1 on 14-7-29.
+//  Copyright (c) 2014年 uustock1. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+@interface YTListObj : NSObject
+@property(nonatomic,strong) NSString * titleLabel;
+@property(nonatomic,strong) NSString * contentByTrue;
+@property(nonatomic,strong) NSString * smallImgByTrue;
+@property(nonatomic,strong) NSString * timeByTrue;
+@property(nonatomic,strong) NSString * itemId;
+@property(nonatomic,strong) NSString * isleaf;
+@property(nonatomic,strong) NSString * number;
+@property(nonatomic,strong) NSString * infourl;
+@property(nonatomic,strong) NSDate *date;
+@property(nonatomic,strong) NSString *supIsleaf;
+@property(nonatomic,strong) NSString * discussnum;
+@end
+
+
